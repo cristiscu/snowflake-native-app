@@ -30,11 +30,11 @@ CREATE STAGE IF NOT EXISTS native_stage
     file_format = (type = 'CSV' field_delimiter = None record_delimiter = None);
 REMOVE @native_stage pattern='.*';
 
-PUT file://C:\Projects\native-app\manifest.yml @native_stage
+PUT file://C:\Projects\snowflake-native-app\manifest.yml @native_stage
     overwrite=true auto_compress=false;
-PUT file://C:\Projects\native-app\readme.md @native_stage
+PUT file://C:\Projects\snowflake-native-app\readme.md @native_stage
     overwrite=true auto_compress=false;
-PUT file://C:\Projects\native-app\src\* @native_stage/src
+PUT file://C:\Projects\snowflake-native-app\src\* @native_stage/src
     overwrite=true auto_compress=false;
 LIST @native_stage;
 
